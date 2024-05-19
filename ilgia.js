@@ -1,23 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // API anahtarı
-    const apiKey = '0b657e9bd77a459aa4cff44cede56eb3';
+    const apiKey = 'apikey 6CU8DJ2U8pKlzAEaxSWWW2:6tOUP3h8UXW9xRrTeHTAuW';
+    const apiUrl = 'https://api.collectapi.com/football/leaguesList';
 
-    // API'den veri al
-    fetch('"https://v3.football.api-sports.io/leagues', {
+    fetch(apiUrl, {
+        method: 'GET',
         headers: {
-            'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-            'x-rapidapi-key': apiKey
+            'content-type': 'application/json',
+            'authorization': `apikey ${apiKey}`
         }
     })
     .then(response => response.json())
     .then(data => {
-        // API'den gelen verileri işle
-        const ilgiaList = document.getElementById('ilgia-list');
-        data.api.leagues.forEach(item => {
+        const leagues = data.result;
+        const leagueList = document.getElementById('league-list');
+
+        leagues.forEach(league => {
             const listItem = document.createElement('li');
-            listItem.textContent = item.name;
-            ilgiaList.appendChild(listItem);
+            listItem.className = 'league-item';
+            listItem.textContent = `${league.league} (${league.country})`;
+            leagueList.appendChild(listItem);
         });
     })
-    .catch(error => console.error('API deneme hatası:', error));
+    .catch(error => {
+        console.error('API deneme hatası:', error);
+    });
 });

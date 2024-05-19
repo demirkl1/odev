@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding : 0;
+
+}
+.login{
+    width:100%;
+    height:600px;
+    background-color: green;
+}
+.box{
+    width:400px;
+    height:350px;
+    border-style :solid;
+    border-color:darkorange;
+    margin: auto;
+    padding-top:30 px;
+    position:relative;
+    top:65 px;
+}
+.welcome{
+    width:175px;
+    height: 27px;
+    margin:auto;
+    border-style:solid;
+    border-color:darkorange;
+    text-align:center;
+    padding-top:8px;
+    border-radius:25px;
+    background-color: darkblue;
+}
+.box input[type="text"],input[type="password"]{
+    width:270px;
+    height:30px;
+    margin:auto;
+}
+.box input[type="submit"]{
+    width:80px;
+    height: 40px;
+    text-align:center;
+}
+
+

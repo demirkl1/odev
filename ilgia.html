@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İLGİ ALANLARIM</title>
+    <title>Futbol Ligleri</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        #league-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .league-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body bgcolor="lightblue">
-    <ul id="ilgia-list"></ul> <!-- API'den alınan verilerin listeleneceği yer -->
+<body>
+    <h1>Futbol Ligleri</h1>
+    <ul id="league-list"></ul>
     <script src="ilgia.js"></script>
 </body>
 </html>
